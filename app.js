@@ -6,7 +6,7 @@ const HIDDEN_CLASSNAME = "hidden";
 
 function onLoginSubmit(event) {
   event.preventDefault(); // 기본 동작인 폼 제출을 막음
-  loginForm.classList.add(HIDDEN_CLASSNAME); // 폼 숨김
+  loginForm.classList.add(HIDDEN_CLASSNAME); // 폼 숨김. 왜 숨겼다 보이는거지?
   const username = loginInput.value; // 입력된 이름 저장
   console.log(username);
   greeting.innerText = `Hello ${username}`; // 환영 메시지 표시
