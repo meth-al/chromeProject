@@ -1,5 +1,8 @@
+// ctrl + alt + n
+
 const clock = document.querySelector("h2#clock");
-    //document.querySelector("clock"); OR .getElementById("clock");
+    //.querySelector("clock");
+    //.getElementById("clock");
 function sayHello() {
   console.log("hello");
 }
