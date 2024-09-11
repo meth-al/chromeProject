@@ -1,42 +1,50 @@
 const quotes = [
     {
-        quotes: "azzulTv",
-        author: "zam-min"
+        quote: "I think, therefore I am.",
+        author: "René Descartes"
     },
     {
-        quotes: "",
-        author: ""
+        quote: "Every great achievement is the result of action, not just thought.",
+        author: "John Dewey"
     },
     {
-        quotes: "",
-        author: ""
+        quote: "Know thyself.",
+        author: "Socrates"
     },
     {
-        quotes: "",
-        author: ""
+        quote: "Life is what we make it.",
+        author: "Oscar Wilde"
     },
     {
-        quotes: "",
-        author: ""
+        quote: "Tomorrow is a new day.",
+        author: "Eleanor Roosevelt"
     },
     {
-        quotes: "",
-        author: ""
+        quote: "Patience is bitter, but its fruit is sweet.",
+        author: "Jean-Jacques Rousseau"
     },
     {
-        quotes: "",
-        author: ""
+        quote: "Failure is a part of the road to success.",
+        author: "Abraham Lincoln"
     },
     {
-        quotes: "",
-        author: ""
+        quote: "Lost time is never found again.",
+        author: "Benjamin Franklin"
     },
     {
-        quotes: "",
-        author: ""
+        quote: "The only thing we have to fear is fear itself.",
+        author: "Franklin D. Roosevelt"
     },
     {
-        quotes: "",
-        author: ""
+        quote: "Happiness is not something ready-made. It comes from your own actions.",
+        author: "Mahatma Gandhi"
     }
-]
+];
+
+const quote = document.querySelector("#quote span:first-child");
+const author = document.querySelector("#quote span:last-child");
+
+const todaysQuote = quotes[Math.floor(Math.random()*quotes.length)];
+
+quote.innerText = todaysQuote.quote;
+author.innerText = todaysQuote.author;
