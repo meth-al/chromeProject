@@ -1,5 +1,6 @@
 # chromeProject
 
-quotes.js ~ background.js 비슷비슷..
-localStorage 브라우저 세션 간에도 데이터를 보존 = 새로고침해도 안 바뀜
- <-> sessionStorage
+append()는 마지막에
+<form>: 사용 측에서 입력을 입력하는 HTML 양식을 정의
+기본적으로 html의 기본틀(form -> id/class) 정의 후 js에서 편집
+편집; createElement() -> innerText수정 -> eventListener("행동", 실행함수) -> append()
