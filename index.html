@@ -8,12 +8,16 @@
     <title>Momentum App</title>
   </head>
 
-<body>
   <form class="hidden" id="login-form">
-    <input required maxlength="15" type="text" placeholder="What's your name?" />
+    <input required maxlength="15" type="text" placeholder="What's your name?" required />
     <input type="submit" value="Log in" />
   </form>
   <h1 id="greeting" class="hidden"></h1>
+  <form id = "todo-form">
+    <!--form은 submit 이벤트를 가짐, submit는 기본적으로 새로고침-->
+    <input type = "text" placeholder = "Write todo and enter press enter.">
+  </form은>
+  <ul id = "todo-list"></ul>
   <h2 id="clock">00:00</h2>
   <div id="quote">
     <span></span>
@@ -24,6 +28,7 @@
   <script src="js/clock.js"></script>
   <script src="js/quotes.js"></script>
   <script src="js/background.js"></script>
+  <script src="js/todo.js"></script>
 </body>
 
 </html>
