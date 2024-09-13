@@ -2,20 +2,22 @@ const toDoForm = document.getElementById("todo-form");
 const toDoInput = document.querySelector("#todo-form input");
 const toDoList = document.getElementById("todo-list");
 
+const TODOS_KEY = "todos";
 const toDos = [];
-// 요소 추가해도 value는 still array라 오류 없음
-// object & arr: reference type 
+/*
+* application 시작할 때마다 비어있기 때문에 form submit하면
+* 당연히 paintTodo는 문제 없으니 그대로 화면에 출력은 되지만
+* localStorage에는 값이 저장 안 됨
+* (form = 새로고침)
+*/
 
 function saveToDos() {
-    // localStorage에 toDos[]저장
 
-  localStorage.setItem("todos", JSON.stringify(toDos));
-    // localStorage는 문자열만 저장 가능 받은 배열을 .stringify
+    localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
 }
 
 function deleteToDo(event) {
-    const li = event.target.parentElement;
-    li.remove();
+    event.target.parentElement.remove();
   }
 
 function paintToDo(newTodo) {
@@ -26,7 +28,6 @@ function paintToDo(newTodo) {
   button.innerText = "❌";
   button.addEventListener("click", deleteToDo);
 
-  //append()는 마지막에
   li.appendChild(span);
   li.appendChild(button);
   toDoList.appendChild(li);
@@ -36,10 +37,16 @@ function handleToDoSubmit(event) {
   event.preventDefault();
   const newTodo = toDoInput.value;
   toDoInput.value = "";
-   // 엔터치면 해당 박스에서 글자 사라지도록
   toDos.push(newTodo);
   paintToDo(newTodo);
   saveToDos();
 }
 
 toDoForm.addEventListener("submit", handleToDoSubmit);
+
+const savedToDos = localStorage.getItem(TODOS_KEY);
+
+if (savedToDos !== null) {
+  const parsedToDos = JSON.parse(savedToDos);
+  parsedToDos.forEach((item) => console.log("this is the turn of ", item));
+}

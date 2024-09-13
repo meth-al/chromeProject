@@ -1,11 +1,13 @@
 # chromeProject
 
-li.remove(); 클릭 된 것은 동글이 리스트에 해당하는 li임
--> console.dir(event.target)를 통해 알 수 있었음
--> <li>가 아니라 .target만 삭제할 경우 <span>도 남아버림
+!= ==는 값만(타입 변환이 먼저 이루어짐)
 
-localStorage는 문자열만 저장 가능 받은 배열을 .stringify
+const item = [1, 2, 3];
+arr.forEach((iter)=> console.log("i'm", *iter));
+ -> i'm 1\ni'm 2\ni'm 3
+ // item은 parsedToDos 배열의 현재 요소
 
-const toDos = [];
-// 요소 추가해도 value는 still array라 오류 없음
-// object & arr: reference type 
+프론트 구성 순서
+1. 외관
+2. 이벤트
+3. 이벤트에 따른 저장
