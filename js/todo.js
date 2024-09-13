@@ -4,12 +4,6 @@ const toDoList = document.getElementById("todo-list");
 
 const TODOS_KEY = "todos";
 const toDos = [];
-/*
-* application 시작할 때마다 비어있기 때문에 form submit하면
-* 당연히 paintTodo는 문제 없으니 그대로 화면에 출력은 되지만
-* localStorage에는 값이 저장 안 됨
-* (form = 새로고침)
-*/
 
 function saveToDos() {
 
@@ -48,5 +42,9 @@ const savedToDos = localStorage.getItem(TODOS_KEY);
 
 if (savedToDos !== null) {
   const parsedToDos = JSON.parse(savedToDos);
-  parsedToDos.forEach((item) => console.log("this is the turn of ", item));
+  toDos = parsedToDos;
+    // toDos가 빈 배열로 계속 새로고침되니까
+    // submit 후 다시 parsedToDos를 받아서
+    // 저장된 것들을 계속 toDos에 저장된 상태로 유지
+  parsedToDos.forEach(paintToDo);
 }
